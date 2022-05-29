@@ -1,0 +1,46 @@
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+  WORKERS: 4
+DATA:
+  DATASET: TMNIST
+  IMAGE_SIZE:
+  - 32
+  - 32
+  NC: 3
+  ROOT: ./data/
+EVAL:
+  DATA_SAMPLE: 50000
+  NETD_CKPT: ''
+  NETG_CKPT: ''
+LOG_DIR: logs/mnist_LDR_multi
+LOSS:
+  EPS: 0.5
+  GAM1: 1.0
+  GAM2: 1.0
+  GAM3: 1.0
+  MODE: 1
+  RHO:
+  - 1.0
+  - 1.0
+MODEL:
+  CIFAR_BACKBONE: ''
+  IMAGENET_WIDTH: 1024
+  INIT: mini_dcgan
+  L_RELU_P: 0.2
+  NDF: 64
+  NGF: 64
+  NUM_CLASSES: 10
+  NZ: 100
+TRAIN:
+  BATCH_SIZE: 2048
+  BETA1: 0.5
+  BETA2: 0.999
+  INNER_LOOP: 1
+  ITERATION: 4500
+  LR_D: 0.00015
+  LR_DECAY: linear
+  LR_G: 0.00015
+  SAVE_STEPS: 1000
+  SHOW_STEPS: 100
